@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<title>博客</title>
+	<link rel="stylesheet" href="/static/css/basic.css">
+	<link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <div id="main">
+        <div class="left">
+         	<a href="" class="hgly"></a>
+        </div>
+        <div class="right">
+            <div class="top">
+            </div>
+            <div class="title">
+            </div>
+            <div class="content">
+                <form method="post" action="/index/">
+                    {% csrf_token %}
+                    <table class="register">
+                        <tr><td>您的姓名</td><td><input type="text" name="username"></td></tr>
+                        <tr><td>您的邮箱</td><td><input type="text" name="email"></td></tr>
+                        <tr><td>性别</td><td><input type="radio" value="男" name="sex"checked>男
+                            <input type="radio" value="女" name="sex">女</td></tr>
+                        <tr><td>您所在地</td><td><input type="text" name="address"></td></tr>
+                        <tr><td>您的爱好</td><td><input type="text" name="hobby"></td></tr>
+                        <tr><td colspan="2">请你留下宝贵的意见：</td></tr>
+                        <tr><td colspan="2"><textarea name="massage" id="" cols="40" rows="7"></textarea></td></tr>
+                        <tr><td><button class="say" type="submit"></button></td><td><a href="/massage/" class="see"></a></td></tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="botton">
+        <p>软件一班、陈文耀、学号611882100005</p>
+        <?php 
+        	mysql_close();
+         ?>
+    </div>
+</body>
+</html>

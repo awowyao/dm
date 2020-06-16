@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/static/css/basic.css">
+    <link rel="stylesheet" href="/static/css/massage.css">
+</head>
+<body>
+    <div id="main">
+        <div class="left">
+         	<a href="/index.html/" class="hgly"></a>
+        </div>
+        <div class="right">
+            <div class="top">
+            </div>
+            <div class="title">
+            </div>
+            <div class="content">
+                <div class="massage_list">
+                 <table class="table" cellspacing="0" border="1">
+                    <tr><th class="username">留言者</th><th class="massage">内容</th><th class="time">时间</th></tr>
+        {% for data in a %}
+            <p> <tr><td><a href="{% url 'username' data.id %}">{{ data.username }}</a>
+                      </td><td><a href="{% url 'detail' data.id %}" title="{data.massage}">{{data.massage}}</a>
+                      </td><td>{{data.time}}</td></tr></p>
+        {% endfor %}
+                </table>
+               
+                </div>
+             <div class="page">
+             <ul>
+                 {% for x in L %}
+                 <li><a href="/massage/?page={{x}}">{{x}}</a></li>
+                 {% endfor %}
+             </ul>
+             </div>
+            </div>
+        </div>
+    </div>
+    <div id="botton">
+        <p>软件一班、陈文耀、学号611882100005</p>
+    </div>
+</body>
+</html>

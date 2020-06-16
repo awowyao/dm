@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/static/css/basic.css">
+    <link rel="stylesheet" href="/static/css/user.css">
+</head>
+<body>
+    <div id="main">
+        <div class="left">
+         	<a href="/index/" class="hgly"></a>
+        </div>
+        <div class="right">
+            <div class="top">
+            </div>
+            <div class="title">
+            </div>
+            <div class="content">
+            <div class="user_top">
+                <table class="user_info">
+
+                    <tr><td>用户：</td><td>{{cx.username}}</td></tr>
+                    <tr><td>邮箱：</td><td>{{cx.enail}}</td></tr>
+                    <tr><td>性别：</td><td>{{cx.sex}}</td></tr>
+                    <tr><td>地址：</td><td>{{cx.address}}</td></tr>
+                    <tr><td>爱好：</td><td>{{cx.hobby}}</td></tr>
+                    <tr><td>留言时间：</td><td>{{cx.time}}</td></tr>
+                </table>
+
+            </div>
+            <div class="user_bottom">
+            <button class="user_back" onclick="javascript:history.back();">返回</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div id="botton">
+        <p>611882100005</p>
+    </div>
+</body>
+</html>

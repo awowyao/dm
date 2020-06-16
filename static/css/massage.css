@@ -1,0 +1,60 @@
+@charset"utf-8";
+th{
+	color: rgb(255,30,110);
+}
+td{
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+a:hover{
+	color: red;
+}
+.massage_list{
+	height: 80%;
+
+	
+}
+.massage_list .table{
+	position: relative;
+	top: 50px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+.massage_list .username{
+	width:  100px;
+}
+.massage_list .massage{
+	width: 200px;
+}
+.massage_list .time{
+	width: 160px;
+
+}
+.page{
+	height: 20%;
+}
+.page li{
+	position: relative;
+	left: 180px;
+	list-style-type: none;
+	float: left;
+	margin: 0 10px;
+	border: 1px solid black;
+
+
+}
+.page li a{
+	text-decoration: none;
+	width: 20px;
+	height: 20px;
+	display: block;
+	text-align: center;
+
+}
+.page li a:hover{
+	background-color: #666;
+	color: white;
+}

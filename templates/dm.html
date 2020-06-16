@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+	<title>动漫</title>
+
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+<div>
+	<div class="header_con">
+
+		<div class="header">
+
+			<div class="welcome fl">欢迎来到我的动漫</div>
+
+			<div class="fr">
+
+				<div class="login_btn fl">
+                    {% if request.session.user %}
+                    欢迎您：<em>{{ request.session.user }}</em>
+                        {% else %}
+                        <a href="/login/">登录</a>
+                    {% endif %}
+					<span>|</span>
+                    {% if request.session.user %}
+                        <form action="/dm/" method="POST">
+                        {% csrf_token %}
+                        <button name="cancellation" value="1">注销</button>
+                        </form>
+                        {% else %}
+                        <a href="/register/">注册</a>
+                    {% endif %}
+
+
+				</div>
+			</div>
+
+		</div>		
+
+	</div>
+{% if script %}
+<script type="text/javascript">alert('{{script}}');</script>
+{% endif %}
+
+
+
+	<div class="search_bar clearfix">
+
+		<a  class="logo fl"><img src=""></a>
+<form action="/class/daily/" method="post">
+    {% csrf_token %}
+		<div class="search_con fl">
+			<input type="text" class="input_text fl" name="name" placeholder="搜索动漫">
+			<input type="submit" class="input_btn fr"  value="搜索">
+
+		</div>
+</form>
+        		<div class="guest_cart fr">
+                {% if request.session.user %}
+                    <form method="post" action="/love/">
+                    {% csrf_token %}
+                    <button class="cart_name fl" name="id" type="submit" value="{{request.session.user}}">我的收藏</button>
+                    <div class="goods_count fl" id="show_count">{{number}}</div>
+                    </form>
+                {% endif %}
+
+
+
+
+
+		</div>
+	</div>
+	<div class="navbar_con">
+
+		<div class="navbar">
+
+			<h1 class="fl">我的动漫</h1>
+
+			<ul class="navlist fl">
+
+				<li><a href="/index/">留言</a></li>
+
+			</ul>
+            <ul class="navlist fl">
+                <li><a href="/upload/">添加</a></li>
+			</ul>
+                  <ul class="navlist fl">
+                  <form action="/dm/" method="post">
+                      {% csrf_token %}
+                      <li><a href="">排序：</a></li>
+                    <li><input class="a_a1" type="submit" name="sort" value="时间" >　</li>
+                 <li><input class="a_a1" type="submit" name="sort" value="名字" ></li>
+                  </form>
+			</ul>
+             <ul class="navlist fl">
+              　　  <li><a href="#">　　分类：</a></li>
+                 {% for a_class in an_class %}
+
+                        <li><a name="a_class" href="/class/daily?a_class={{a_class}}">{{a_class}}　</a></li>
+
+              {% endfor %}
+
+			</ul>
+             <ul class="navlist fl">
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="list_model">
+		<div class="goods_con clearfix">
+			<div class="goods_banner fl"><img src="/static/images/banner05.png"></div>
+			<ul class="goods_list fl">
+            {% if request.session.user %}
+            {% for x in cx %}
+                <li>
+                    <form method="post" action="{% url 'love' x.id %}">
+                 {% csrf_token %}
+                         <button name="id" value="{{request.session.user}}">添加到我喜欢</button>
+                 </form>
+                    <h4><a href="{{ x.web }}"><button>百度云{{ x.code }}</button></a></h4>
+					<a><img src="/{{x.l_ing}}"></a>
+					<div class="prize">{{ x.name }}</div>
+				</li>
+
+
+                {% endfor %}
+                {% else %}
+                {% for x in cx %}
+                    <li>
+                    <h4><a href="{{ x.web }}"><button>百度云{{ x.code }}</button></a></h4>
+					<a><img src="/static/{{x.l_ing}}"></a>
+					<div class="prize">{{ x.name }}</div>
+				</li>
+                {% endfor %}
+            {% endif %}
+
+			</ul>
+		</div>
+    </div>
+</div>
+
+</body>
+
+</html>

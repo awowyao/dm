@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/static/css/basic.css">
+    <link rel="stylesheet" href="/static/css/detail.css">
+</head>
+<body>
+    <div id="main">
+        <div class="left">
+         	<a href="index.php" class="hgly"></a>
+        </div>
+        <div class="right">
+            <div class="top">
+            </div>
+            <div class="title">
+            </div>
+            <div class="content">
+            <div class="detail_top">
+                <h2>留言详情</h2>
+                <ul>
+                    <li>留言者: {{cx.username}}</li>
+                    <li>留言: {{cx.massage}}</li>
+                    <li>留言时间: {{cx.time}}</li>
+                </ul>
+            </div>
+            <div class="detail_bottom">
+                <button button onclick="javascript:history.back();">返回</button>
+                <form method="post" action="{% url 'del' cx.id %}">
+                    {% csrf_token %}
+                <button type="submit" onclick="javascript:history.back();">删除</button>
+
+                    密码：<input type="text" name="passwd" >
+
+
+                </form>      
+            </div>
+            </div>
+        </div>
+    </div>
+    <div id="botton">
+        <p>软件一班、陈文耀、学号611882100005</p>
+        <?php 
+        	mysql_close();
+         ?>
+    </div>
+</body>
+</html>

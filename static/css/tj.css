@@ -1,0 +1,26 @@
+.tj {
+	height: 500px;
+	width: 500px;
+	font-size: 25px;
+	left:35%;
+	top:35%; 
+	position: absolute;
+	
+	
+}
+.bq{
+	font-size: large;
+}
+.bg{
+ margin:0 auto
+}
+.bj{
+	height: 950px;
+	background-image: url(/static/images/bj.png);
+	width: 1700px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	
+}

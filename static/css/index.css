@@ -1,0 +1,25 @@
+@charset"utf-8";
+#main .right .content .register{
+	position: relative;
+	top: 50px;
+	margin: 0 auto;
+	font-size: 14px;
+	color: rgb(255,30,110);
+
+}
+
+#main .right .content .register .say{
+	width: 88px;
+	height: 28px;
+	background-image: url(../images/say.jpg);
+	border: none;
+	cursor: pointer;
+}
+#main .right .content .register .see{
+	width: 88px;
+	height: 28px;
+	background-image: url(../images/see.jpg);
+	border: none;
+	cursor: pointer;
+	display: block;
+}

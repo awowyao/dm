@@ -1,0 +1,28 @@
+{% extends 'love.html' %}
+
+{% block class %}
+    <h1>{{ a }}</h1>
+{% endblock %}
+
+{% block classif %}
+    <div class="breadcrumb">
+		<a href="/dm/">全部动漫</a>
+		<span>></span>
+		<a href="#">{{a}}</a>
+{% endblock %}
+
+
+{% block content %}
+    <ul class="goods_type_list clearfix">
+        {% for a in class_daily %}
+            <li>
+            <a href="{{a.web}}"><img src="/{{a.l_ing}}"></a>
+            <h4><a href="{{a.web}}">{{a.name}}</a></h4>
+            <div class="operate">
+                <span class="prize">提取码</span>
+                <span class="unit">{{a.code}}</span>
+            </div>
+        {% endfor %}
+        </li>
+    </ul>
+{% endblock %}

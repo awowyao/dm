@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/tj.css">
+    <style type="text/css">
+<!--
+.STYLE1 {font-size: larger}
+-->
+    </style>
+</head>
+<body>
+{% if script %}
+<script type="text/javascript">alert('{{ script }}')</script>
+{% endif %}
+<div class="bj">
+<div class="tj">
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+  <table class="bg" width="500" border="1" >
+  <tr>
+    <td>名字：<input class="bq" type="text" name="name"></td>
+  </tr>
+  <tr>
+    <td>封面：<input class="bq" type="file" name="img"></td>
+  </tr>
+  <tr>
+    <td>分类：
+      <input class="bq" type="text" name="An_type"></td>
+  </tr>
+  <tr>
+    <td>百度网盘：
+      <input class="bq" type="text" name="web"></td>
+  </tr>
+  <tr>
+    <td>提取码
+      <input class="bq" type="text" name="code">  </tr>
+  <tr>
+  <td>　　　　　　　　　
+    <button class="bq" type="submit">上传</button></td>
+  </tr>
+</table>	
+  </form>
+</div>
+</div>
+</body>
+</html>
+

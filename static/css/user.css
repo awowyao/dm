@@ -1,0 +1,26 @@
+@charset"utf-8";
+.user_top{
+	height: 80%;
+}
+.user_top .user_info{
+	font-size: 20px;
+	position: relative;
+	top: 50px;
+	margin: 0 auto;
+}
+.user_top .user_info tr{
+	height: 50px;
+}
+.user_top .user_info td{
+	border-bottom: 1px dashed black;
+}
+.user_bottom{
+	height: 20%;
+}
+.user_bottom .user_back{
+	height: 28px;
+	width: 88px;
+	position: relative;
+	top: 10px;
+	left: 230px;
+}

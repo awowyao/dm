@@ -1,0 +1,28 @@
+@charset"utf-8";
+h2{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 50px;
+	left: 250px;
+}
+.detail_top{
+	height: 80%;
+	width: 70%;
+}
+.detail_top ul{
+	position: relative;
+	top: 50px;
+	left: 100px;
+}
+.detail_top li{
+	list-style-type: none;
+}
+.detail_bottom{
+	height: 20%;
+	padding: 0 0 0 250px;
+}
+.detail_bottom{
+	height: 26px;
+	width: 88px;
+}
