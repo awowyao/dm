@@ -1,26 +1,44 @@
 {% extends 'love.html' %}
 
+{% block js %}
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/static/js/login.js"></script>
+    <script type="text/javascript" src="/static/js/class.js"></script>
+{% endblock %}
+
 {% block class %}
-    <h1>{{ a }}</h1>
+    <h1>{{ status }}</h1>
 {% endblock %}
 
 {% block classif %}
     <div class="breadcrumb">
 		<a href="/dm/">全部动漫</a>
 		<span>></span>
-		<a href="#">{{a}}</a>
+		<a href="#">{{ status }}</a>
 {% endblock %}
 
 
 {% block content %}
     <ul class="goods_type_list clearfix">
-        {% for a in class_daily %}
+        {% for dm in class_daily %}
             <li>
+            {% if statu %}
+            {% for a in dm %}
             <a href="{{a.web}}"><img src="/{{a.l_ing}}"></a>
             <h4><a href="{{a.web}}">{{a.name}}</a></h4>
-            <div class="operate">
+            <div class='operate'>
                 <span class="prize">提取码</span>
                 <span class="unit">{{a.code}}</span>
+            </div>
+                {% endfor %}
+                {% else %}
+                <a href="{{a.web}}"><img src="/{{a.l_ing}}"></a>
+            <h4><a href="{{a.web}}">{{a.name}}</a></h4>
+            <div class='operate'>
+                <span class="prize">提取码</span>
+                <span class="unit">{{a.code}}</span>
+            {% endif %}
+
             </div>
         {% endfor %}
         </li>

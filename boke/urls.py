@@ -38,5 +38,20 @@ urlpatterns = [
     url(r'^love/(\d+)',love_Views,name='love'),
     path('class/daily', class_daily_Views),
     url(r'^class/daily/',class_daily_Views),
+    # url(r'^addlove/(\d+)',addlove_Views,name='addlove'),
+
+]
+
+urlpatterns +=[
+    path('Check_users/',Check_users_Voews),
+    path('Check_dm',Check_dm_Views),
+    path('loginout/',loginout_Views),
+    path('Collection/',Collection_Views),
+    path('anime/',anime_Views),
+    url(r'^addlove/$',addlove_Views),
+    path('del_Collection/',del_Collection_Views),
+    path('dm_sort/',dm_sort_Views),
+
+
 ]
 

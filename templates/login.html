@@ -5,13 +5,25 @@
 	<title>登录</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function () {
+                if ({{ status }}==1)
+        {
+            $(".user_error").html('用户名错误')
+        }
+                if ({{ status }}==2)
+        {
+            $(".user_error").html('密码错误')
+        }
+    });
+
+    </script>
 </head>
-{% if script %}
-    <script type="text/javascript">alert('{{ script }}')</script>
-{% endif %}
+
 <body>
+{% csrf_token %}
 	<div class="login_top clearfix">
-		<a href="index.html" class="login_logo"><img src="images/logo02.png"></a>	
 	</div>
 
 	<div class="login_form_bg">
@@ -26,17 +38,16 @@
 				<div class="form_input">
 					<form method="post" action="/login/">
                         {% csrf_token %}
-						<input type="text" name="username" class="name_input" placeholder="请输入用户名">
-						<div class="user_error">{{a}}</div>
-						<input type="password" name="pwd" class="pass_input" placeholder="请输入密码">
+						<input type="text" name="username" id="username"  class="name_input" placeholder="请输入用户名">
+						<div class="user_error"></div>
+						<input type="password" name="pwd" id="pwd" class="pass_input" placeholder="请输入密码">
 						<div class="pwd_error">{{b}}</div>
 						<div class="more_input clearfix">
 							<input type="checkbox" name="reb">
 							<label>记住用户名</label>
 							<a href="#">忘记密码</a>
 						</div>
-                        <button class="input_submit">登录</button>
-
+                        <button id="login" class="input_submit">登录</button>
 					</form>
                 <form action="/login/" method="post">
                 {% csrf_token %}

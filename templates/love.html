@@ -5,28 +5,24 @@
 	<title>我喜欢</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    {% block js %}
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/static/js/login.js"></script>
+    <script type="text/javascript" src="/static/js/love.js"></script>
+    {% endblock %}
 </head>
 <body>
 	<div class="header_con">
 		<div class="header">
 			<div class="welcome fl">欢迎来到我的动漫!</div>
 			<div class="fr">
-				<div class="login_info fl">
-                    {% if request.session.user %}
-                    欢迎您：<em>{{request.session.user}}</em>
-                        {% else %}
-
-                        <a href="/login/">登录</a>
-                    {% endif %}
+				<div class="login_btn fl">
+                <li id="longin">
+                <a href='#'>登录</a>
                 <span>|</span>
-                    {% if request.session.user %}
-                        <form action="/dm/" method="POST">
-                        {% csrf_token %}
-                        <button name="cancellation" value="1">注销</button>
-                        </form>
-                        {% else %}
-                        <a href="/register/">注册</a>
-                    {% endif %}
+                    <a href='#'>注册</a>
+                </li>
+
 
 				</div>
 
@@ -53,9 +49,6 @@
 			</ul>
 	  </div>
 	</div>
-{% if script %}
-<script type='text/javascript'>alert('删除成功！');</script>
-{% endif %}
     {% block classif %}
 	<div class="breadcrumb">
 		<a href="/dm/">全部动漫</a>
@@ -73,7 +66,7 @@
 				<a href="#"></a>
 			</div>
       {% block content %}
-			<ul class="goods_type_list clearfix">
+			<ul id="Collection" class="goods_type_list clearfix">
                     {% for a in dm %}
                         <li>
 					<a href="{{a.web}}"><img src="/{{a.l_ing}}"></a>

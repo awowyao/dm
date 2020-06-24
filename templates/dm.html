@@ -9,8 +9,10 @@
 	<title>动漫</title>
 
 	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
-
 	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/static/js/login.js"></script>
+    <script type="text/javascript" src="/static/js/anime.js"></script>
 </head>
 <div>
 	<div class="header_con">
@@ -22,31 +24,18 @@
 			<div class="fr">
 
 				<div class="login_btn fl">
-                    {% if request.session.user %}
-                    欢迎您：<em>{{ request.session.user }}</em>
-                        {% else %}
-                        <a href="/login/">登录</a>
-                    {% endif %}
+
+                    <li id="longin">
+
 					<span>|</span>
-                    {% if request.session.user %}
-                        <form action="/dm/" method="POST">
-                        {% csrf_token %}
-                        <button name="cancellation" value="1">注销</button>
-                        </form>
-                        {% else %}
-                        <a href="/register/">注册</a>
-                    {% endif %}
 
-
+                    </li>
 				</div>
 			</div>
 
 		</div>		
 
 	</div>
-{% if script %}
-<script type="text/javascript">alert('{{script}}');</script>
-{% endif %}
 
 
 
@@ -62,13 +51,13 @@
 		</div>
 </form>
         		<div class="guest_cart fr">
-                {% if request.session.user %}
-                    <form method="post" action="/love/">
-                    {% csrf_token %}
-                    <button class="cart_name fl" name="id" type="submit" value="{{request.session.user}}">我的收藏</button>
-                    <div class="goods_count fl" id="show_count">{{number}}</div>
-                    </form>
-                {% endif %}
+
+                    <li id="Collection" >
+                        <a class="cart_name fl"  href="#" >收藏</a>
+
+{#                    <div class="goods_count fl" id="show_count">{{number}}</div>#}
+                    </li>
+
 
 
 
@@ -90,15 +79,12 @@
             <ul class="navlist fl">
                 <li><a href="/upload/">添加</a></li>
 			</ul>
-                  <ul class="navlist fl">
-                  <form action="/dm/" method="post">
-                      {% csrf_token %}
-                      <li><a href="">排序：</a></li>
-                    <li><input class="a_a1" type="submit" name="sort" value="时间" >　</li>
-                 <li><input class="a_a1" type="submit" name="sort" value="名字" ></li>
-                  </form>
+                  <ul id="sort" class="navlist fl">
+                      <li><a href=''>排序：</a></li>
+                    <li><a href='/dm?sort=时间'>时间　</a></li>　
+                 <li><a href='/dm?sort=名字'>名字</a></li>
 			</ul>
-             <ul class="navlist fl">
+             <ul id="dm_class" class="navlist fl">
               　　  <li><a href="#">　　分类：</a></li>
                  {% for a_class in an_class %}
 
@@ -115,31 +101,30 @@
 
 	<div class="list_model">
 		<div class="goods_con clearfix">
-			<div class="goods_banner fl"><img src="/static/images/banner05.png"></div>
-			<ul class="goods_list fl">
-            {% if request.session.user %}
-            {% for x in cx %}
-                <li>
-                    <form method="post" action="{% url 'love' x.id %}">
-                 {% csrf_token %}
-                         <button name="id" value="{{request.session.user}}">添加到我喜欢</button>
-                 </form>
-                    <h4><a href="{{ x.web }}"><button>百度云{{ x.code }}</button></a></h4>
-					<a><img src="/{{x.l_ing}}"></a>
-					<div class="prize">{{ x.name }}</div>
+			<div  class="goods_banner fl"><img src="/static/images/banner05.png"></div>
+			<ul id="ani" class="goods_list fl">
+{#            {% if request.session.user %}#}
+{#            {% for x in cx %}#}
+                <li >
+{#                    <form method="post" action="{% url 'addlove' x.id %}">#}
+{#                 {% csrf_token %}#}
+{#                         <button name="id" value="{{request.session.user}}">添加到我喜欢</button>#}
+{#                 </form>#}
+{#                    <h4><a href="{{ x.web }}"><button>百度云{{ x.code }}</button></a></h4>#}
+{#					<a><img src="/{{x.l_ing}}"></a>#}
+{#					<div class="prize">{{ x.name }}</div>#}
 				</li>
 
-
-                {% endfor %}
-                {% else %}
-                {% for x in cx %}
-                    <li>
-                    <h4><a href="{{ x.web }}"><button>百度云{{ x.code }}</button></a></h4>
-					<a><img src="/static/{{x.l_ing}}"></a>
-					<div class="prize">{{ x.name }}</div>
-				</li>
-                {% endfor %}
-            {% endif %}
+{#                {% endfor %}#}
+{#                {% else %}#}
+{#                {% for x in cx %}#}
+{#                    <li>#}
+{#                    <h4><a href="{{ x.web }}"><button>百度云{{ x.code }}</button></a></h4>#}
+{#					<a><img src="/static/{{x.l_ing}}"></a>#}
+{#					<div class="prize">{{ x.name }}</div>#}
+{#				</li>#}
+{#                {% endfor %}#}
+{#            {% endif %}#}
 
 			</ul>
 		</div>

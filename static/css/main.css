@@ -37,7 +37,7 @@ html,body{height:100%}
 .search_bar{width:1200px;height:115px;margin:0 auto;}
 .logo{width:150px;height:59px;margin:29px 0 0 17px;}
 
-.search_con{width:616px;height:38px;border:1px solid #37ab40;margin:34px 0 0 124px;background:url(../images/icons.png) 10px -338px no-repeat;}
+.search_con{width:616px;height:38px;border:1px solid #37ab40;margin:34px 0 0 124px;background:url() 10px -338px no-repeat;}
 .search_con .input_text{width:470px;height:34px;border:0px;margin:2px 0 0 36px;outline:none;font-size:12px;color:#737272;font-family:'Microsoft Yahei'}
 
 .search_con .input_btn{
@@ -49,7 +49,7 @@ html,body{height:100%}
 }
 
 .guest_cart .cart_name{
-	width:158px;height:38px;line-height:38px;border:1px solid #dddddd;display:block;background:url(../images/icons.png) 13px -300px no-repeat #fff;font-size:14px;color:#37ab40;text-indent:56px;
+	width:158px;height:38px;line-height:38px;border:1px solid #dddddd;display:block;background:url() 13px -300px no-repeat #fff;font-size:14px;color:#37ab40;text-indent:56px;
 }
 
 .guest_cart .goods_count{
@@ -135,23 +135,23 @@ html,body{height:100%}
 
 .center_con{width:1200px;height:270px;margin:0 auto;}
 .subnav{width:198px;height:270px;border-left:1px solid #eee;border-right:1px solid #eee;}
-.subnav li{height:44px;border-bottom:1px solid #eee;background:url(../images/icons.png) 178px -257px no-repeat #fff;}
+.subnav li{height:44px;border-bottom:1px solid #eee;background:url() 178px -257px no-repeat #fff;}
 
 .subnav li a{display:block;height:44px;line-height:44px;text-indent:71px;font-size:14px;color:#333}
 .subnav li a:hover{color:#ff8800}
 
-.subnav li .fruit{background:url(../images/icons.png) 28px 0px no-repeat;}
-.subnav li .seafood{background:url(../images/icons.png) 28px -43px no-repeat;}
-.subnav li .meet{background:url(../images/icons.png) 28px -86px no-repeat;}
-.subnav li .egg{background:url(../images/icons.png) 28px -132px no-repeat;}
-.subnav li .vegetables{background:url(../images/icons.png) 28px -174px no-repeat;}
-.subnav li .ice{background:url(../images/icons.png) 28px -220px no-repeat;}
+.subnav li .fruit{background:url(..) 28px 0px no-repeat;}
+.subnav li .seafood{background:url(..) 28px -43px no-repeat;}
+.subnav li .meet{background:url(..) 28px -86px no-repeat;}
+.subnav li .egg{background:url(..) 28px -132px no-repeat;}
+.subnav li .vegetables{background:url(..) 28px -174px no-repeat;}
+.subnav li .ice{background:url(..) 28px -220px no-repeat;}
 
 
 .slide{width:760px;height:270px;position:relative;overflow:hidden;}
 .slide .slide_pics{position:relative;left:0;top:0;width:760px;height:270px;}
 .slide .slide_pics li{width:760px;height:270px;position:absolute;left:0;top:0}
-.slide .prev,.slide .next{width:17px;height:23px;background:url(../images/icons.png) left -388px no-repeat;position:absolute;left:11px;top:122px;cursor:pointer;}
+.slide .prev,.slide .next{width:17px;height:23px;background:url() left -388px no-repeat;position:absolute;left:11px;top:122px;cursor:pointer;}
 .slide .next{background-position:left -428px;left:732px;}
 .points{width:100%;height:11px;position:absolute;left:0;top:250px;text-align:center;}
 .points li{display:inline-block;width:11px;height:11px;margin:0 5px;background-color:#9f9f9f;border-radius:50%;cursor:pointer;}
@@ -455,12 +455,12 @@ html,body{height:100%}
 .pay_style_con input{float:left;margin:14px 7px 0 0;}
 .pay_style_con label{float:left;border:1px solid #ccc;background-color:#fff;padding:10px 10px 10px 40px;margin-right:25px}
 
-.pay_style_con .cash{background:url(../images/pay_icons.png) 8px top no-repeat #fff;}
-.pay_style_con .weixin{background:url(../images/pay_icons.png) 6px -36px no-repeat #fff;}
+.pay_style_con .cash{background:url(../images/pay_) 8px top no-repeat #fff;}
+.pay_style_con .weixin{background:url(../images/pay_) 6px -36px no-repeat #fff;}
 
-.pay_style_con .zhifubao{background:url(../images/pay_icons.png) 12px -72px no-repeat #fff;width:50px;height:16px}
+.pay_style_con .zhifubao{background:url(../images/pay_) 12px -72px no-repeat #fff;width:50px;height:16px}
 
-.pay_style_con .bank{background:url(../images/pay_icons.png) 6px -108px no-repeat #fff;}
+.pay_style_con .bank{background:url(../images/pay_) 6px -108px no-repeat #fff;}
 
 
 .goods_list_th{height:40px;border-bottom:1px solid #ccc}
